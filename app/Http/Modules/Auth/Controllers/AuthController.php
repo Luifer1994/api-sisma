@@ -3,6 +3,7 @@
 namespace App\Http\Modules\Auth\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Modules\Auth\Requests\LoginRequest;
 use App\Http\Modules\Auth\Services\AuthService;
 use GuzzleHttp\Psr7\Response;
 use Illuminate\Http\Request;
@@ -23,7 +24,7 @@ class AuthController extends Controller
      *@param Request $request
      *@return \Illuminate\Http\Response
      */
-    public function login(Request $request)
+    public function login(LoginRequest $request)
     {
         try {
             $userLogin = $this->authService->login($request);
